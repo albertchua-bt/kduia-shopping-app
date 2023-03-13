@@ -2,11 +2,11 @@ import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 
 const Remaining = () => {
-  const { MoneyType, budget } = useContext(AppContext);
+  const { MoneyType, budget, CartValue } = useContext(AppContext);
 
   return (
     <div className='alert alert-success'>
-        <span>Remaining: {MoneyType} {budget}</span>
+        <span>Remaining: {MoneyType} {2000 - CartValue}</span>
     </div>
     );
 };
