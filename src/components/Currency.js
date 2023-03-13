@@ -9,7 +9,7 @@ const Currency = () => {
         type: 'CHG_MONEYTYPE',
         payload: val,
     })
-}
+  }
 
   return (
 

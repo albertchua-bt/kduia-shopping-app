@@ -47,12 +47,6 @@ export const AppReducer = (state, action) => {
             return {
                 ...state,
             };
-        case 'CHG_LOCATION':
-            action.type = "DONE";
-            state.Location = action.payload;
-            return {
-                ...state
-            };
         case 'CHG_MONEYTYPE':
             action.type = "DONE";
             state.MoneyType = action.payload;
@@ -73,7 +67,6 @@ const initialState = {
         { id: "Dinner set", name: 'Dinner set', quantity: 0, unitprice: 600 },
         { id: "Bags", name: 'Bags', quantity: 0, unitprice: 200 },
     ],
-    Location: '£',
     MoneyType: '$'
 };
 
