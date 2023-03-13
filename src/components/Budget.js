@@ -13,7 +13,7 @@ const Location = () => {
     
 
   return (
-        <div className='alert alert-secondary'> Budget: [$$] {
+        <div className='alert alert-secondary'> Budget: $ {
       <input 
         name="Budget" 
         id="Budget" 

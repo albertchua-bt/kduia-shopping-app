@@ -20,19 +20,19 @@ export const AppReducer = (state, action) => {
                 ...state,
             };
 
-            case 'RED_QUANTITY':
-                state.expenses.map((expense)=>{
-                    if(expense.name === action.payload.name) {
-                        expense.quantity = expense.quantity - action.payload.quantity;
-                    }
-                    expense.quantity = expense.quantity < 0 ? 0: expense.quantity;
-                    new_expenses.push(expense);
-                    return true;
-                })
-                state.expenses = new_expenses;
-                action.type = "DONE";
-                return {
-                    ...state,
+        case 'RED_QUANTITY':
+            state.expenses.map((expense)=>{
+                if(expense.name === action.payload.name) {
+                    expense.quantity = expense.quantity - action.payload.quantity;
+                }
+                expense.quantity = expense.quantity < 0 ? 0: expense.quantity;
+                new_expenses.push(expense);
+                return true;
+            })
+            state.expenses = new_expenses;
+            action.type = "DONE";
+            return {
+                ...state,
                 };
         case 'DELETE_ITEM':
             state.expenses.map((expense)=>{
@@ -47,16 +47,21 @@ export const AppReducer = (state, action) => {
             return {
                 ...state,
             };
-    case 'CHG_LOCATION':
+        case 'CHG_LOCATION':
             action.type = "DONE";
             state.Location = action.payload;
             return {
                 ...state
-            }
-
+            };
+        case 'CHG_MONEYTYPE':
+            action.type = "DONE";
+            state.MoneyType = action.payload;
+            return {
+                ...state
+            };
         default:
             return state;
-    }
+        }
 };
 
 // 1. Sets the initial state when the app loads
@@ -68,7 +73,8 @@ const initialState = {
         { id: "Dinner set", name: 'Dinner set', quantity: 0, unitprice: 600 },
         { id: "Bags", name: 'Bags', quantity: 0, unitprice: 200 },
     ],
-    Location: '£'
+    Location: '£',
+    MoneyType: '$'
 };
 
 // 2. Creates the context this is the thing our components import and use to get the state
@@ -91,7 +97,8 @@ state.CartValue = totalExpenses;
                 expenses: state.expenses,
                 CartValue: state.CartValue,
                 dispatch,
-                Location: state.Location
+                Location: state.Location,
+                MoneyType: state.MoneyType
             }}
         >
             {props.children}

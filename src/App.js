@@ -6,8 +6,9 @@ import { AppProvider } from './context/AppContext';
 import CartValue from './components/CartValue';
 import ExpenseList from './components/ExpenseList';
 import ItemSelected from './components/ItemSelected';
-import Location from './components/Location';
+import Currency from './components/Currency';
 import Budget from './components/Budget'
+import Remaining from './components/Remaining';
 
 const App = () => {
     return (
@@ -19,10 +20,13 @@ const App = () => {
                         <Budget />
                     </div>
                     <div className='col-sm'>
+                        <Remaining />
+                    </div>
+                    <div className='col-sm'>
                         <CartValue />
                     </div>
                     <div className='col-sm'>
-                        <Location />
+                        <Currency />
                     </div>
                 </div>
                 <h3 className='mt-3'>Shopping Cart</h3>
