@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 import { AppProvider } from './context/AppContext';
-import CartValue from './components/CartValue';
+import SpentSoFar from './components/SpentSoFar';
 import ExpenseList from './components/ExpenseList';
 import ItemSelected from './components/ItemSelected';
 import Currency from './components/Currency';
@@ -23,7 +23,7 @@ const App = () => {
                         <Remaining />
                     </div>
                     <div className='col-sm'>
-                        <CartValue />
+                        <SpentSoFar />
                     </div>
                     <div className='col-sm'>
                         <Currency />
