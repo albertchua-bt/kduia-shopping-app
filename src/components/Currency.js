@@ -18,10 +18,10 @@ const Currency = () => {
         onChange={event=>{
           changeMoneyType(event.target.value);
           }}>
-        <option value="£">Uk(£)</option>
-        <option value="₹">India(₹)</option>
-        <option value="€">Europe(€)</option>
-        <option value="CAD">Canada(CAD)</option>
+        <option value="$">($) Dollar</option>
+        <option value="£">(£) Pound</option>
+        <option value="₹">(₹) Rupee</option>
+        <option value="€">(€) Euro</option>
       </select>
       }
     </div>
